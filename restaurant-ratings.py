@@ -9,13 +9,13 @@ file_name = open(sys.argv[1])
 restaurant_dict = {}
 
 for line in file_name:
-    line = line.rstrip()
-    line = line.split(':')
+    # line = line.rstrip()
+    # line = line.split(':')
     
-    # rest, rating = line.rstrip().split(':')
+    restaurant, rating = line.rstrip().split(':')
 
     # for word in line:
-    restaurant_dict[line[0]] = line[1]
+    restaurant_dict[restaurant] = rating
 
 rated_restaurants = sorted(restaurant_dict.items())
 
