@@ -8,18 +8,29 @@ file_name = open(sys.argv[1])
 
 restaurant_dict = {}
 
-for line in file_name:
-    # line = line.rstrip()
-    # line = line.split(':')
+user_rest = raw_input("Tell me a restaurant you have been to recently: ").capitalize()
+user_rate = int(raw_input("How would you rate the restaurant from 1 to 5: "))
+
+def ordered_rest(user_rest, user_rate):
+
+    for line in file_name:
+        # line = line.rstrip()
+        # line = line.split(':')
+        
+        restaurant, rating = line.rstrip().split(':')
+
+        # for word in line:
+        restaurant_dict[restaurant] = rating
+
+    restaurant_dict[user_rest] = user_rate  
+
+    rated_restaurants = sorted(restaurant_dict.items())
+
+    for rest, rate in rated_restaurants:
+        print rest + ' has a rating of ' + str(rate)
+
     
-    restaurant, rating = line.rstrip().split(':')
 
-    # for word in line:
-    restaurant_dict[restaurant] = rating
-
-rated_restaurants = sorted(restaurant_dict.items())
-
-for tup in rated_restaurants:
-    print tup[0] + ' has a rating of ' + tup[1]
+ordered_rest(user_rest, user_rate)
 
 file_name.close()
