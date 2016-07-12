@@ -12,11 +12,14 @@ for line in file_name:
     line = line.rstrip()
     line = line.split(':')
     
-    for word in line:
-        restaurant_dict[line[0]] = line[1]
+    # rest, rating = line.rstrip().split(':')
+
+    # for word in line:
+    restaurant_dict[line[0]] = line[1]
 
 rated_restaurants = sorted(restaurant_dict.items())
 
 for tup in rated_restaurants:
     print tup[0] + ' has a rating of ' + tup[1]
 
+file_name.close()
