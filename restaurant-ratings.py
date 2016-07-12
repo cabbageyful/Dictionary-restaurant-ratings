@@ -12,6 +12,12 @@ user_rest = raw_input("Tell me a restaurant you have been to recently: ").capita
 user_rate = int(raw_input("How would you rate the restaurant from 1 to 5: "))
 
 def ordered_rest(user_rest, user_rate):
+    """Print list of restaurants and their ratings.
+
+    Reads a file with restaurant name:rating and adds info to the empty 
+    restaurant_dict dictionary with restaurant name as key and rating as value
+    then adds user's input to the dictionary. Sorts dictionary in alphabetical
+    order then prints list of restaurant and rating."""
 
     for line in file_name:
         # line = line.rstrip()
@@ -29,7 +35,7 @@ def ordered_rest(user_rest, user_rate):
     for rest, rate in rated_restaurants:
         print rest + ' has a rating of ' + str(rate)
 
-    
+ 
 
 ordered_rest(user_rest, user_rate)
 
